@@ -2,10 +2,18 @@ import numpy as np
 from functools import reduce
 
 
+def standard_deviation(data):
+    return (sum(list(map(lambda x: (x - mean) ** 2, data))) / (n - 1)) ** 0.5
+
+
+def offset_standard_deviation(data):
+    return standard_deviation(data) * ((n - 1) / n) ** 0.5
+
+
 def lose(data):  # remove misses
     n = len(data)
     mean = np.mean(data)
-    sigma = (sum(list(map(lambda x: (x - mean) ** 2, data))) / (n - 1)) ** 0.5
+    sigma = standard_deviation(data)
     x_max = reduce(lambda x1, x2: x1 if (abs(x1 - mean) > abs(x2 - mean)) else x2, data)
 
     data_2 = data.copy()
@@ -23,10 +31,10 @@ def lose(data):  # remove misses
 def composite_criterion(data):
     n = len(data)
     mean = np.mean(data)
-    sigma_sm = (sum(list(map(lambda x: (x - mean) ** 2, data))) / n) ** 0.5
-    sigma = (sum(list(map(lambda x: (x - mean) ** 2, data))) / (n - 1)) ** 0.5
+    sigma_offset = offset_standard_deviation(data)
+    sigma = standard_deviation(data)
 
-    d = sum(list(map(lambda x: abs(x - mean), data))) / (n * sigma_sm)
+    d = sum(list(map(lambda x: abs(x - mean), data))) / (n * sigma_offset)
     print("d: ", d)
 
     d_min, d_max = map(float, input("Enter d_min and d_max(look appendix table 5): ").split())
@@ -78,7 +86,7 @@ def main():
         n = len(data)
         mean = np.mean(data)
 
-        sigma = (sum(list(map(lambda x: (x - mean) ** 2, data))) / (n - 1)) ** 0.5
+        sigma = standard_deviation(data)
         sigma_mean = sigma / n ** 0.5
         print("data:", *data)
         print("n:", n)
@@ -89,10 +97,8 @@ def main():
     if mode == 4:
         n = len(data)  # count of measurements
         mean = np.mean(data)
-        # standard deviation
-        sigma = (sum(list(map(lambda x: (x - mean) ** 2, data))) / (n - 1)) ** 0.5
-        # offset standard deviation - for composite criterion
-        sigma_sm = (sum(list(map(lambda x: (x - mean) ** 2, data))) / n) ** 0.5
+        sigma = standard_deviation(data)
+        sigma_offset = offset_standard_deviation(data)
         # mean standard deviation = sigma/sqrt(n)
         sigma_mean = sigma / n ** 0.5
 
@@ -100,7 +106,7 @@ def main():
         print("n:", n)
         print("mean:", mean)
         print("sigma:", sigma)
-        print("sigma_sm:", sigma_sm)
+        print("sigma_offset:", sigma_offset)
         print("sigma_mean:", sigma_mean)
 
 
