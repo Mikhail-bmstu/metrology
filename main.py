@@ -72,20 +72,21 @@ def main():
             print("The data belong to the normal distribution law")
 
     if mode == 3:  # многократные измерения
-        print("Loses:")
         data = lose(data)
+
+        if composite_crit(data):
+            print("The data doesn't belong to the normal distribution law")
+        else:
+            print("The data belong to the normal distribution law")
+
         n = len(data)
         mean = np.mean(data)
-
-        # составной критерий
-        d = composite_crit(data)
 
         sigma = (sum(list(map(lambda x: (x - mean)**2, data))) / (n-1))**0.5
         sigma_mean = sigma / n**0.5
         print("data:", *data)
         print("n:", n)
         print("mean:", mean)
-        print("d:", d)
         print("sigma:", sigma)
         print("sigma_mean:", sigma_mean)
 
@@ -102,6 +103,8 @@ def main():
         sigma_mean = sigma / n**0.5
 
         print("data:", *data)
+        print("n:", n)
+        print("mean:", mean)
         print("sigma:", sigma)
         print("sigma_sm:", sigma_sm)
         print("sigma_mean:", sigma_mean)
