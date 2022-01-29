@@ -2,10 +2,10 @@ import numpy as np
 from functools import reduce
 
 
-def lose(data):  # удаляем промахи
+def lose(data):  # remove misses
     n = len(data)
     mean = np.mean(data)
-    sigma = (sum(list(map(lambda x: (x - mean)**2, data))) / (n - 1))**0.5
+    sigma = (sum(list(map(lambda x: (x - mean) ** 2, data))) / (n - 1)) ** 0.5
     x_max = reduce(lambda x1, x2: x1 if (abs(x1 - mean) > abs(x2 - mean)) else x2, data)
 
     data_2 = data.copy()
@@ -15,24 +15,24 @@ def lose(data):  # удаляем промахи
     if abs(x_max - mean_x_max) <= 3 * sigma:
         return data
     else:
-        print(f"{x_max} is lose, deleting {x_max}...")
+        print(f"{x_max} is miss, deleting {x_max}...")
         data.remove(x_max)
         return lose(data)
 
 
-def composite_crit(data):  # составной критерий
+def composite_criterion(data):
     n = len(data)
     mean = np.mean(data)
-    sigma_sm = (sum(list(map(lambda x: (x - mean)**2, data))) / n)**0.5
-    sigma = (sum(list(map(lambda x: (x - mean)**2, data))) / (n-1))**0.5
+    sigma_sm = (sum(list(map(lambda x: (x - mean) ** 2, data))) / n) ** 0.5
+    sigma = (sum(list(map(lambda x: (x - mean) ** 2, data))) / (n - 1)) ** 0.5
 
     d = sum(list(map(lambda x: abs(x - mean), data))) / (n * sigma_sm)
     print("d: ", d)
 
-    d_min, d_max = map(int, input("Enter d_min and d_max: ").split())
+    d_min, d_max = map(float, input("Enter d_min and d_max(look appendix table 5): ").split())
 
     if d_min < d < d_max:
-        z, m_table = map(int, input("Enter table values \"z\" and \"m\":").split())
+        z, m_table = map(float, input("Enter table values \"z\" and \"m\"(look appendix table 6: ").split())
         m = sum(list(map(lambda x: 1 if abs(mean - x) > z * sigma else 0, data)))
 
         if m < m_table:
@@ -43,38 +43,34 @@ def composite_crit(data):  # составной критерий
         return False
 
 
-
 def main():
-    print("1 - Выявление промахов")
-    print("2 - составной критерий (определиение закона распределения)")
-    print("3 - Многократные измерения (входит удаление промахов)")
-    print("4 - Просто вывести средн.ариф., СКО, СКО смещ., СКО ср.ариф.")
+    print("1 - Miss detection")
+    print("2 - Composite criterion (definition of the distribution law)")
+    print("3 - Multiple measurements (includes removal of misses))")
+    print("4 - Just output mean, standard deviation, offset standard deviation, mean standard deviation")
     mode = int(input("Choose mod: "))
-    data = list(map(int, input("Введите данные(через пробел):\n").split()))
+    data = list(map(float, input("Enter the data (separated by a space):\n").split()))
 
-    n = len(data)
-    mean = np.mean(data)
-
-    print("n:", n)
-    print("mean:", mean)
-
-    if mode == 1:  # промахи
+    if mode == 1:  # misses
         print("data before:", *data)
-        print("Loses:")
+        print("Misses:")
         print("data after:", *lose(data))
 
-    if mode == 2:  # составной критерий
+    if mode == 2:  # composite criterion
         if len(data) < 15:
             print("Belonging to the normal distribution law isn't checked")
-        if composite_crit(data):
+        elif composite_criterion(data):
             print("The data doesn't belong to the normal distribution law")
         else:
             print("The data belong to the normal distribution law")
 
-    if mode == 3:  # многократные измерения
+    if mode == 3:  # multiple measurements
+        print("data before:", *data)
         data = lose(data)
+        print("Misses:")
+        print("data after:", data)
 
-        if composite_crit(data):
+        if composite_criterion(data):
             print("The data doesn't belong to the normal distribution law")
         else:
             print("The data belong to the normal distribution law")
@@ -82,25 +78,23 @@ def main():
         n = len(data)
         mean = np.mean(data)
 
-        sigma = (sum(list(map(lambda x: (x - mean)**2, data))) / (n-1))**0.5
-        sigma_mean = sigma / n**0.5
+        sigma = (sum(list(map(lambda x: (x - mean) ** 2, data))) / (n - 1)) ** 0.5
+        sigma_mean = sigma / n ** 0.5
         print("data:", *data)
         print("n:", n)
         print("mean:", mean)
         print("sigma:", sigma)
         print("sigma_mean:", sigma_mean)
 
-        return
-
     if mode == 4:
-        n = len(data)  # количество измерений
-        mean = np.mean(data)  # среднее арифметическое значение
-        # среднее квадратичное отклонение (СКО)
-        sigma = (sum(list(map(lambda x : (x - mean)**2, data))) / (n-1))**0.5
-        # смещ. СКО - для составного критерия (определиение закона распределения)
-        sigma_sm = (sum(list(map(lambda x : (x - mean)**2, data))) / n)**0.5
-        # СКО среднего арифметического = СКО/sqrt(n) - для оценки многократных ихмерений
-        sigma_mean = sigma / n**0.5
+        n = len(data)  # count of measurements
+        mean = np.mean(data)
+        # standard deviation
+        sigma = (sum(list(map(lambda x: (x - mean) ** 2, data))) / (n - 1)) ** 0.5
+        # offset standard deviation - for composite criterion
+        sigma_sm = (sum(list(map(lambda x: (x - mean) ** 2, data))) / n) ** 0.5
+        # mean standard deviation = sigma/sqrt(n)
+        sigma_mean = sigma / n ** 0.5
 
         print("data:", *data)
         print("n:", n)
@@ -108,8 +102,6 @@ def main():
         print("sigma:", sigma)
         print("sigma_sm:", sigma_sm)
         print("sigma_mean:", sigma_mean)
-
-        return
 
 
 if __name__ == "__main__":
