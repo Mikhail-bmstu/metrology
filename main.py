@@ -3,15 +3,17 @@ from functools import reduce
 
 
 def standard_deviation(data):
+    n = len(data)
+    mean = np.mean(data)
     return (sum(list(map(lambda x: (x - mean) ** 2, data))) / (n - 1)) ** 0.5
 
 
 def offset_standard_deviation(data):
+    n = len(data)
     return standard_deviation(data) * ((n - 1) / n) ** 0.5
 
 
 def lose(data):  # remove misses
-    n = len(data)
     mean = np.mean(data)
     sigma = standard_deviation(data)
     x_max = reduce(lambda x1, x2: x1 if (abs(x1 - mean) > abs(x2 - mean)) else x2, data)
@@ -37,10 +39,10 @@ def composite_criterion(data):
     d = sum(list(map(lambda x: abs(x - mean), data))) / (n * sigma_offset)
     print("d: ", d)
 
-    d_min, d_max = map(float, input("Enter d_min and d_max(look appendix table 5): ").split())
+    d_min, d_max = map(float, input(f"Enter d_min and d_max for n = {n}(look appendix table 5): ").split())
 
     if d_min < d < d_max:
-        z, m_table = map(float, input("Enter table values \"z\" and \"m\"(look appendix table 6: ").split())
+        z, m_table = map(float, input(f"Enter table values \"z\" and \"m\" for n = {n}(look appendix table 6): ").split())
         m = sum(list(map(lambda x: 1 if abs(mean - x) > z * sigma else 0, data)))
 
         if m < m_table:
@@ -74,9 +76,9 @@ def main():
 
     if mode == 3:  # multiple measurements
         print("data before:", *data)
-        data = lose(data)
         print("Misses:")
-        print("data after:", data)
+        data = lose(data)
+        print("data after:", *data)
 
         if composite_criterion(data):
             print("The data doesn't belong to the normal distribution law")

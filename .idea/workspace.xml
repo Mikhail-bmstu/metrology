@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9337ef7-ba60-4250-a9b0-74985cdcd5a5" name="Changes" comment="add description to readme file">
+    <list default="true" id="b9337ef7-ba60-4250-a9b0-74985cdcd5a5" name="Changes" comment="add usage to readme file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643549861880</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add usage to readme file">
+      <created>1643552484441</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1643552484441</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +178,7 @@
     <MESSAGE value="add func standard deviation" />
     <MESSAGE value="minor impruves" />
     <MESSAGE value="add description to readme file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add description to readme file" />
+    <MESSAGE value="add usage to readme file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add usage to readme file" />
   </component>
 </project>
