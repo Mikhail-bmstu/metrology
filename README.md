@@ -21,7 +21,7 @@ ___
 ___
 **mode 1**
 
-find and remove misses, ****no limit*** on the number of measurements*
+find and remove misses, **_no limit_** *on the number of measurements*
 
 ![](img/mode_1.jpg)
 
@@ -29,7 +29,7 @@ find and remove misses, ****no limit*** on the number of measurements*
 
 you can check if your measurements fall under the normal distribution law
 
-limit for the number of measurements: n < 50
+**_limit_** for the number of measurements: n < 50
 
 ![](img/mode_2.jpg)
 
@@ -39,11 +39,15 @@ combination of **mode 1** and **mode 2 +** you get mean,
 variation of standard deviation; 
 that's all complex calculations that you need for process multiple measurements.
 
+**_limit_** for the number of measurements: n < 50
+
 ![](img/mode_3.jpg)
 
 **mode 4**
 
 You get mean, standard deviation, offset standard deviation, mean standard deviation
+
+**_no limit_** on the number of measurements
 
 ![](img/mode_4.jpg)
 
