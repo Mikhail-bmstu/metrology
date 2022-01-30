@@ -55,9 +55,9 @@ def main():
     print("1 - Miss detection")
     print("2 - Composite criterion (definition of the distribution law)")
     print("3 - Multiple measurements (includes removal of misses))")
-    print("4 - Just output mean, standard deviation, offset standard deviation, mean standard deviation")
+    print("4 - Output mean, standard deviation, offset standard deviation, mean standard deviation")
     mode = int(input("Choose mod: "))
-    data = list(map(float, input("Enter the data (separated by a space):\n").split()))
+    data = list(map(float, input("Enter the data(separated by a space):\n").split()))
 
     if mode == 1:  # misses
         print("data before:", *data)
@@ -91,8 +91,8 @@ def main():
         print("data:", *data)
         print("n:", n)
         print("mean:", mean)
-        print("sigma:", sigma)
-        print("sigma_mean:", sigma_mean)
+        print("standard deviation:", sigma)
+        print("mean standard deviation:", sigma_mean)
 
     if mode == 4:
         n = len(data)  # count of measurements
@@ -105,9 +105,9 @@ def main():
         print("data:", *data)
         print("n:", n)
         print("mean:", mean)
-        print("sigma:", sigma)
-        print("sigma_offset:", sigma_offset)
-        print("sigma_mean:", sigma_mean)
+        print("standard deviation:", sigma)
+        print("offset standard deviation:", sigma_offset)
+        print("mean standard deviation:", sigma_mean)
 
 
 if __name__ == "__main__":

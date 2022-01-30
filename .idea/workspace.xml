@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9337ef7-ba60-4250-a9b0-74985cdcd5a5" name="Changes" comment="translate rus to eng">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="b9337ef7-ba60-4250-a9b0-74985cdcd5a5" name="Changes" comment="add func standard deviation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643479811505</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add func standard deviation">
+      <created>1643480254576</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1643480254576</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +153,7 @@
     <MESSAGE value="..." />
     <MESSAGE value="change mode 3,4" />
     <MESSAGE value="translate rus to eng" />
-    <option name="LAST_COMMIT_MESSAGE" value="translate rus to eng" />
+    <MESSAGE value="add func standard deviation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add func standard deviation" />
   </component>
 </project>
