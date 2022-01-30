@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b9337ef7-ba60-4250-a9b0-74985cdcd5a5" name="Changes" comment="add images to README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/mode_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/mode_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/mode_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/mode_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/mode_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/mode_3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/mode_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/mode_4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrology.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrology.py" beforeDir="false" afterPath="$PROJECT_DIR$/metrology.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643554834410</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add images to README.md">
+      <created>1643555980433</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1643555980433</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

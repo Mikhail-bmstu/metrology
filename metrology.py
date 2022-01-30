@@ -1,10 +1,13 @@
-import numpy as np
 from functools import reduce
+
+
+def average(data):
+    return sum(data) / len(data)
 
 
 def standard_deviation(data):
     n = len(data)
-    mean = np.mean(data)
+    mean = average(data)
     return (sum(list(map(lambda x: (x - mean) ** 2, data))) / (n - 1)) ** 0.5
 
 
@@ -14,13 +17,13 @@ def offset_standard_deviation(data):
 
 
 def lose(data):  # remove misses
-    mean = np.mean(data)
+    mean = average(data)
     sigma = standard_deviation(data)
     x_max = reduce(lambda x1, x2: x1 if (abs(x1 - mean) > abs(x2 - mean)) else x2, data)
 
     data_2 = data.copy()
     data_2.remove(x_max)
-    mean_x_max = np.mean(data_2)
+    mean_x_max = average(data_2)
 
     if abs(x_max - mean_x_max) <= 3 * sigma:
         return data
@@ -32,7 +35,7 @@ def lose(data):  # remove misses
 
 def composite_criterion(data):
     n = len(data)
-    mean = np.mean(data)
+    mean = average(data)
     sigma_offset = offset_standard_deviation(data)
     sigma = standard_deviation(data)
 
@@ -91,7 +94,7 @@ def main():
                 print("The data belong to the normal distribution law")
 
             n = len(data)
-            mean = np.mean(data)
+            mean = average(data)
 
             sigma = standard_deviation(data)
             sigma_mean = sigma / n ** 0.5
@@ -103,7 +106,7 @@ def main():
 
         if mode == 4:
             n = len(data)  # count of measurements
-            mean = np.mean(data)
+            mean = average(data)
             sigma = standard_deviation(data)
             sigma_offset = offset_standard_deviation(data)
             # mean standard deviation = sigma/sqrt(n)
