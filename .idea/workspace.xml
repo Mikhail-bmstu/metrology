@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9337ef7-ba60-4250-a9b0-74985cdcd5a5" name="Changes" comment="add usage to readme file">
+    <list default="true" id="b9337ef7-ba60-4250-a9b0-74985cdcd5a5" name="Changes" comment="add images to README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mode_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/mode_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mode_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/mode_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mode_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/mode_3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mode_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/mode_4.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643552484441</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add images to README.md">
+      <created>1643554834410</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1643554834410</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,6 +190,7 @@
     <MESSAGE value="minor impruves" />
     <MESSAGE value="add description to readme file" />
     <MESSAGE value="add usage to readme file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add usage to readme file" />
+    <MESSAGE value="add images to README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="add images to README.md" />
   </component>
 </project>
